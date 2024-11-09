@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="jaune_pale">#FBF8E8</color>
+    <color name="vert_pale">#E6F4E6</color>
+    <color name="marron_pale">#D3B8A3</color>
+    <color name="beige">#F5E9DA</color>
+    <color name="jaune_or">#E6FAD338</color>
+    <color name="jaune_or_plus">#E6F6C904</color>
 </resources>
