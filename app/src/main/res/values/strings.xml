@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">Cook\'Eat</string>
-    <string name="edit_message">Saisissez un message</string>
-    <string name="button_send">Envoyer</string>
+    <string name="boutton_rechercher">Rechercher</string>
+
+    <!-- Page de recherche d'un plat -->
+    <string name="rechercher_un_plat">Rechercher un plat</string>
+
+    <!-- Pop up qui s'ouvre quand on clique sur une recette proposée -->
+    <string name="Nom_du_plat">Nom_du_plat</string>
+    <string name="titre_Ingredients">Ingrédients : </string>
+    <string name="liste_ingredients">liste_ingrédient</string>
+    <string name="titre_preparation">Préparation : </string>
+    <string name="etapes_preparation">Etapes_préparation</string>
+
+    <!-- Page de recherche d'un plat a partir d'ingredients -->
+    <string name="rechercher_un_plat_a_partir_dingredient">Rechercher un plat à partir d\'ingrédients</string>
+
 </resources>

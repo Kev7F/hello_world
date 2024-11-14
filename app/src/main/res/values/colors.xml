@@ -13,4 +13,10 @@
     <color name="beige">#F5E9DA</color>
     <color name="jaune_or">#E6FAD338</color>
     <color name="jaune_or_plus">#E6F6C904</color>
+    <color name="gris_fonce">#E64D4C4C</color>
+    <color name="gris_clair">#999696</color>
+    <color name="marron">#E66F521A</color>
+
+
+
 </resources>

@@ -8,11 +8,18 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/rechercher_plat_titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="@dimen/marge"
+        android:text="@string/rechercher_un_plat"
+        android:layout_marginLeft="@dimen/marge"
+        android:layout_marginTop="@dimen/marge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/style_ecriture_titres"
+    />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

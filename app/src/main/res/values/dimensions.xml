@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Dimension des marges par défaut -->
+    <dimen name="marge">16dp</dimen>
+
+</resources>

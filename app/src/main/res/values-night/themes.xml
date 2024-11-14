@@ -13,4 +13,25 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- Style d'écriture pour le contenu des recettes (liste des ingrédients, etapes de préparation..) -->
+    <style name="style_ecriture_contenu_recette">
+        <item name="android:textColor">@color/gris_fonce</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Style d'écriture pour les sous-titres (recettes, ingredients, préparation..) -->
+    <style name="style_ecriture_sous_titres">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Style d'écriture pour les sous-titres ("Rchercher un plat", "Rechercher un plat à partir d'ingrédients" "Favoris" ..) -->
+    <style name="style_ecriture_titres">
+        <item name="android:textColor">@color/marron</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
 </resources>
