@@ -20,6 +20,28 @@
         style="@style/style_ecriture_titres"
     />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sendMessage"
+        android:layout_marginStart="@dimen/marge"
+        android:layout_marginLeft="@dimen/marge"
+        android:text="ok"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rechercher_plat_titre" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Quel plat cuisiner aujourd'hui ?"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/rechercher_plat_titre"
+        app:layout_constraintTop_toBottomOf="@+id/rechercher_plat_titre" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
