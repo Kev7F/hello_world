@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 mediaPlayer.stop();
                 mediaPlayer.release();
             }
-        }, 1900);
+        }, 1000);
     }
 
     /** Called when the user taps the Send button */
