@@ -17,4 +17,15 @@
     <!-- Page de recherche d'un plat a partir d'ingredients -->
     <string name="rechercher_un_plat_a_partir_dingredient">Rechercher un plat à partir d\'ingrédients</string>
 
+    <!-- Tableau de Filtres pour éliminer certains aliments -->
+    <string-array name="tableau_filtres">
+        <item>Végétarien</item>
+        <item>Végan</item>
+        <item>Halal</item>
+        <item>Kasher</item>
+        <item>Sans Alcool</item>
+        <item>Sans lactose</item>
+    </string-array>
+
+
 </resources>

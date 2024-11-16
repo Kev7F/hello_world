@@ -29,6 +29,92 @@
             app:layout_constraintStart_toStartOf="@+id/resultat_recherche"
             app:layout_constraintTop_toBottomOf="@+id/resultat_recherche" />
 
+        <TextView
+            android:id="@+id/nombre_de_personnes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marge"
+            android:text="Nombre de personnes : "
+            android:textColor="@color/marron"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed"
+            app:layout_constraintStart_toStartOf="@+id/plat_recherche_par_utilisateur"
+            app:layout_constraintTop_toBottomOf="@+id/plat_recherche_par_utilisateur" />
+
+        <TextView
+            android:id="@+id/filtres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marge"
+            android:layout_marginLeft="25dp"
+
+            android:fontFamily="sans-serif-condensed"
+            android:text="Filtrer les résultats : "
+            android:textColor="@color/marron"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/nombre_de_personnes"
+            app:layout_constraintTop_toBottomOf="@+id/plat_recherche_par_utilisateur" />
+
+        <LinearLayout
+            android:id="@+id/compteur"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintStart_toStartOf="@+id/nombre_de_personnes"
+            app:layout_constraintTop_toBottomOf="@+id/nombre_de_personnes">
+
+                <Button
+                    android:id="@+id/boutton_moins"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textColor="@color/marron"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    android:textStyle="bold"
+                    android:textSize="19sp"
+                    />
+
+                <!-- Texte au milieu -->
+                <TextView
+                    android:id="@+id/valeur_du_compteur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:fontFamily="cursive"
+                    android:textStyle="bold"/>
+
+                <!-- Bouton + -->
+                <Button
+                    android:id="@+id/boutton_plus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="+"
+                    android:textColor="@color/marron"
+                    android:textStyle="bold"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    android:textSize="19sp" />
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/liste_filtres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/liste_filtre_background"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+
+            app:layout_constraintStart_toEndOf="@+id/compteur"
+            app:layout_constraintTop_toBottomOf="@+id/filtres" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
