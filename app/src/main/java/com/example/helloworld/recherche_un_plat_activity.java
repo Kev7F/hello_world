@@ -18,7 +18,7 @@ public class recherche_un_plat_activity extends AppCompatActivity {
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
         // Capture the layout's TextView and set the string as its text
-        TextView textView = findViewById(R.id.messageTextView);
+        TextView textView = findViewById(R.id.plat_recherche_par_utilisateur);
         textView.setText(message);
     }
 }

@@ -9,37 +9,38 @@
 
     <TextView
         android:id="@+id/rechercher_plat_titre"
+        style="@style/style_ecriture_titres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marge"
-        android:text="@string/rechercher_un_plat"
         android:layout_marginLeft="@dimen/marge"
         android:layout_marginTop="@dimen/marge"
+        android:text="@string/rechercher_un_plat"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/style_ecriture_titres"
-    />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="sendMessage"
-        android:layout_marginStart="@dimen/marge"
+    <ImageButton
+        android:id="@+id/boutton_recherche_un_plat"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginLeft="@dimen/marge"
-        android:text="ok"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rechercher_plat_titre" />
+        android:layout_marginStart="@dimen/marge"
+        android:onClick="sendMessage"
+        android:src="@drawable/ic_rechercher_boutton"
+        android:background="@drawable/ic_rechercher_boutton_background"
+        app:layout_constraintTop_toTopOf="@+id/barre_recherche_plat"
+        app:layout_constraintBottom_toBottomOf="@+id/barre_recherche_plat"
+        app:layout_constraintStart_toEndOf="@+id/barre_recherche_plat"
+        />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="0dp"
+        android:id="@+id/barre_recherche_plat"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:hint="Quel plat cuisiner aujourd'hui ?"
         android:inputType="textPersonName"
-        android:text="Quel plat cuisiner aujourd'hui ?"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        android:textColor="@color/marron"
+        android:textColorHint="@color/gris_clair"
         app:layout_constraintStart_toStartOf="@+id/rechercher_plat_titre"
         app:layout_constraintTop_toBottomOf="@+id/rechercher_plat_titre" />
 

@@ -3,27 +3,31 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/jaune_pale"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/resultat_recherche"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marge"
+            android:text="@string/resultat_recherche_plat"
+            android:layout_marginLeft="@dimen/marge"
             android:layout_marginTop="@dimen/marge"
-            android:text="mon mes "
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/style_ecriture_sous_titres"/>
 
         <TextView
-            android:id="@+id/messageTextView"
+            android:id="@+id/plat_recherche_par_utilisateur"
+            style="@style/style_ecriture_sous_titres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
             android:text="TextView"
-            android:textSize="@dimen/marge"
-            app:layout_constraintTop_toBottomOf="@id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/resultat_recherche"
+            app:layout_constraintTop_toBottomOf="@+id/resultat_recherche" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
