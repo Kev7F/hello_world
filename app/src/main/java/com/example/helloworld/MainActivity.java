@@ -1,6 +1,7 @@
 package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -9,6 +10,8 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
 
+import database.AppDatabase;
+import database.TextEntity;
 
 public class MainActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
@@ -30,11 +33,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run()
             {
-                //arreter l'audio au bout de 1,9s
+                //arreter l'audio au bout de 1s
                 mediaPlayer.stop();
                 mediaPlayer.release();
             }
         }, 1000);
+
+
+        // Initialisation de la base de données, le nom de la base de donnée est "my-database"
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "my-database").build();
+        new Thread(() -> {      // On utilise un thread car Room interdit l'accès à la base de données sur le thread principale
+
+            // Test
+            TextEntity text = new TextEntity();     //On donne le nom text à une Entity (une table)
+            text.content = "Exemple de texte";      //On définit le texte qu'il contient
+            db.textDao().insertText(text);          //On insert le texte dans "my-database"
+
+        }).start();
+
     }
 
     /** Called when the user taps the Send button */
