@@ -12,5 +12,16 @@ import androidx.room.PrimaryKey;
 public class TextEntity {
     @PrimaryKey(autoGenerate = true)
     public int id; // Identifiant unique pour chaque ligne
-    public String content; // Contenu texte
+    public String nom_recette; // Contenu texte
+    public int nbr_personnes;
+    public String ingredients;
+    public String recette;
+    public String filtres;
 }
+
+
+//public int id; // Identifiant unique pour chaque ligne
+//public String content;
+//public int nbr_personnes;
+//public String ingredients;
+//public String recette;

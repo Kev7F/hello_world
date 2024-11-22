@@ -44,10 +44,14 @@ public class MainActivity extends AppCompatActivity {
         AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "my-database").build();
         new Thread(() -> {      // On utilise un thread car Room interdit l'accès à la base de données sur le thread principale
 
-            // Test
-            TextEntity text = new TextEntity();     //On donne le nom text à une Entity (une table)
-            text.content = "Exemple de texte";      //On définit le texte qu'il contient
-            db.textDao().insertText(text);          //On insert le texte dans "my-database"
+            TextEntity Lasagnes = new TextEntity();
+            Lasagnes.nom_recette = "Lasagnes";
+            Lasagnes.nbr_personnes = 2;
+            db.textDao().insertText(Lasagnes);
+
+            TextEntity pate_carbo = new TextEntity();
+            pate_carbo.nom_recette = "Pâte Carbonara";
+            db.textDao().insertText(pate_carbo);
 
         }).start();
 
