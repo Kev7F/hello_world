@@ -32,6 +32,10 @@ public interface TextDao {
     @Query("SELECT recette FROM TextEntity WHERE id = :id")
     String getRecetteById(int id);
 
+    // Récupérer le champ "filtres_temps" par id
+    @Query("SELECT filtres_temps FROM TextEntity WHERE id = :id")
+    String getFiltresTempsById(int id);
+
     // Récupérer le champ "filtres" par id
     @Query("SELECT filtres FROM TextEntity WHERE id = :id")
     String getFiltresById(int id);
