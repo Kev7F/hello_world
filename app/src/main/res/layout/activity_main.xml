@@ -7,6 +7,8 @@
     android:background="@color/jaune_pale"
     tools:context=".MainActivity">
 
+
+
     <TextView
         android:id="@+id/rechercher_plat_titre"
         style="@style/style_ecriture_titres"
@@ -17,7 +19,35 @@
         android:layout_marginTop="@dimen/marge"
         android:text="@string/rechercher_un_plat"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- BottomNavigationView -->
+
+    <FrameLayout
+        android:id="@+id/frameContainer"
+        android:layout_width="573dp"
+        android:layout_height="960dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/jaune_or_plus"
+        app:itemIconTint="@color/marron"
+        app:itemTextColor="@color/marron" /> <!-- Si tu veux aussi changer la couleur du texte -->
+
+
 
     <ImageButton
         android:id="@+id/boutton_recherche_un_plat"
@@ -45,4 +75,11 @@
         app:layout_constraintTop_toBottomOf="@+id/rechercher_plat_titre" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
 

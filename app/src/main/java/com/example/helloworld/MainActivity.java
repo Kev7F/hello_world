@@ -12,10 +12,20 @@ import android.widget.EditText;
 
 import database.AppDatabase;
 import database.TextEntity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import android.view.MenuItem;
+
+
+
+
 
 public class MainActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     public static final String EXTRA_MESSAGE = "com.example.helloworld.MESSAGE";
+    private BottomNavigationView bottomNavigationView; // Variable pour la BottomNavigationView
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +48,33 @@ public class MainActivity extends AppCompatActivity {
                 mediaPlayer.release();
             }
         }, 1000);
+
+        // Initialisation de la BottomNavigationView
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        // Gérer les clics sur le menu de navigation
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        // Ouvre l'activité RechercheActivity
+                        startActivity(new Intent(MainActivity.this, IconeRechercheActivity.class));
+                        return true;
+                    case R.id.nav_search:
+                        // Ouvre l'activité PropositionActivity
+                        startActivity(new Intent(MainActivity.this, IconePropositionActivity.class));
+                        return true;
+                    case R.id.nav_profile:
+                        // Ouvre l'activité FavorisActivity
+                        startActivity(new Intent(MainActivity.this, IconeFavorisActivity.class));
+                        return true;
+                }
+                return false;
+            }
+        });
+
+
 
 
         // Initialisation de la base de données, le nom de la base de donnée est "my-database"
