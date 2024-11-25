@@ -7,6 +7,10 @@ package database;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import androidx.room.TypeConverter;
 
 @Entity
 public class TextEntity {
@@ -14,8 +18,13 @@ public class TextEntity {
     public int id; // Identifiant unique pour chaque ligne
     public String nom_recette; // Contenu texte
     public int nbr_personnes;
+    public int qt_boeuf;
+    public int qt_tomate;
+    public double qt_champignon;
     public String ingredients;
     public String recette;
+    //filtre_temps = "temps_preparation;temps_cuisson"
+    public String filtres_temps;
     public String filtres;
 }
 
