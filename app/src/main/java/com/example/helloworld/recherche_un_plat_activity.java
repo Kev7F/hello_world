@@ -6,13 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Button;
-
-
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 
@@ -36,11 +31,11 @@ public class recherche_un_plat_activity extends AppCompatActivity
         // ----------- Gestion de l'affichage de la recherche de l'utilisateur -----------------
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String recette_recherchee = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.plat_recherche_par_utilisateur);
-        textView.setText(message);
+        textView.setText(recette_recherchee);
 
         // ----------- Gestion du compteur -----------------
         affichageCompteur = findViewById(R.id.valeur_du_compteur);
@@ -74,10 +69,13 @@ public class recherche_un_plat_activity extends AppCompatActivity
         Button boutonFiltres = findViewById(R.id.boutton_filtres);
         //affichage de la boite de dialogue qui contient le filtres selectionnables quand on clique sur le bouton
         boutonFiltres.setOnClickListener(v -> showFilterDialog());
+
+
     }
 
     // Méthode qui va permettre d'afficher la boite de dialogue contenant les filtres selectionnables
-    private void showFilterDialog() {
+    private void showFilterDialog()
+    {
         AlertDialog.Builder fenetre_dialogue = new AlertDialog.Builder(this);
         fenetre_dialogue.setTitle("Sélectionner pour filtrer les résultats : ");
 
@@ -105,10 +103,7 @@ public class recherche_un_plat_activity extends AppCompatActivity
         // Annuler pour  fermmer la fenetre sans prendre en compte les filtres sélectionné, on reste dans le même état qu'avant d'ouvrir la fenetre de filtres
         fenetre_dialogue.setNegativeButton("Annuler", null);
 
-
         fenetre_dialogue.create().show();
-
-        fenetre_dialogue.create().getWindow().setBackgroundDrawableResource(R.color.marron_pale);
     }
 
 }

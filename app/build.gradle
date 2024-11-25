@@ -40,6 +40,7 @@ dependencies {
 
 //Ajout de la dépendance pour utiliser Room (bibliothèque pour gérer les bases de données SQLite)
 dependencies {
+
     implementation "androidx.room:room-runtime:2.5.0"
     annotationProcessor "androidx.room:room-compiler:2.5.0"
 }
