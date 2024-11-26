@@ -23,6 +23,7 @@ public class recherche_un_plat_activity extends AppCompatActivity
     
 
     @Override
+    //La fonction OnCreate est la fonction qui est directement lancé après l'avoir créer
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);

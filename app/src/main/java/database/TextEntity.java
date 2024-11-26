@@ -27,10 +27,3 @@ public class TextEntity {
     public String filtres_temps;
     public String filtres;
 }
-
-
-//public int id; // Identifiant unique pour chaque ligne
-//public String content;
-//public int nbr_personnes;
-//public String ingredients;
-//public String recette;
