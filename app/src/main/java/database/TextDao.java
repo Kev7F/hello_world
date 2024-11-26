@@ -16,7 +16,6 @@ public interface TextDao {
     @Query("SELECT * FROM TextEntity")
     List<TextEntity> getAllTexts();
 
-
     @Query("SELECT nom_recette FROM TextEntity WHERE id = :id")
     String getNomRecetteById(int id);
 

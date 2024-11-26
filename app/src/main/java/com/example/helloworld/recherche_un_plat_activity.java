@@ -10,6 +10,11 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.List;
+
+import database.AppDatabase;
+import database.TextEntity;
+
 
 public class recherche_un_plat_activity extends AppCompatActivity
 {
@@ -28,6 +33,16 @@ public class recherche_un_plat_activity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recherche_un_plat);
+
+        //Récupération de la base de données
+        AppDatabase db = AppDatabase.getInstance(this);
+        new Thread(() -> {
+            List<TextEntity> recettes = db.textDao().getAllTexts(); // Lecture des données
+            // Affiche ou utilise les données récupérées (sur un autre thread)
+            for (TextEntity recette : recettes) {
+                System.out.println(recette.nom_recette);
+            }
+        }).start();
 
         // ----------- Gestion de l'affichage de la recherche de l'utilisateur -----------------
         // Get the Intent that started this activity and extract the string

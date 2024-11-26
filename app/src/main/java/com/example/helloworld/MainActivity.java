@@ -2,8 +2,6 @@ package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
-import java.util.ArrayList;
-import java.util.List;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -26,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     public static final String EXTRA_MESSAGE = "com.example.helloworld.MESSAGE";
     private BottomNavigationView bottomNavigationView; // Variable pour la BottomNavigationView
-
 
 
     @Override
@@ -97,11 +94,10 @@ public class MainActivity extends AppCompatActivity {
             pate_carbo.nom_recette = "Pâte Carbonara";
             db.textDao().insertText(pate_carbo);
 
+
             String nomRecette = db.textDao().getNomRecetteById(1);
             System.out.println(nomRecette); //Affichage de Lasagnes dans logcat
-
         }).start();
-
 
     }
 
