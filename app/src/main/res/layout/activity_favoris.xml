@@ -4,16 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/jaune_pale"
     tools:context=".IconeFavorisActivity">
 
     <TextView
+        android:id="@+id/favoris_titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:text="Enregistrez toutes vos recettes favorites"
-        android:textSize="18sp"
+        style="@style/style_ecriture_titres"
+        android:layout_marginStart="@dimen/marge"
+        android:layout_marginLeft="@dimen/marge"
+        android:layout_marginTop="@dimen/marge"
+        android:text="@string/favoris"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/favoris_sous_titre"
+        style="@style/style_ecriture_sous_titres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text="@string/liste_recettes_favoris"
+        app:layout_constraintStart_toStartOf="@+id/favoris_titre"
+        app:layout_constraintTop_toBottomOf="@+id/favoris_titre" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

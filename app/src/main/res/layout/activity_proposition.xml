@@ -4,16 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/jaune_pale"
     tools:context=".IconePropositionActivity">
 
     <TextView
-        android:layout_width="393dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="4dp"
-        android:text="Nous vous proposons des recettes en fonction des aliments dont vous disposez"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.372"
+        android:id="@+id/rechercher_plat_ingredient_titre"
+        style="@style/style_ecriture_titres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marge"
+        android:layout_marginLeft="@dimen/marge"
+        android:layout_marginTop="@dimen/marge"
+        android:text="@string/rechercher_un_plat_a_partir_dingredient"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/boutton_recherche_un_plat"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/ic_rechercher_boutton_background"
+        android:onClick="sendMessage2"
+        android:src="@drawable/ic_rechercher_boutton"
+        app:layout_constraintStart_toEndOf="@+id/barre_recherche_plat_ingredient"
+        app:layout_constraintTop_toTopOf="@+id/barre_recherche_plat_ingredient" />
+
+    <EditText
+        android:id="@+id/barre_recherche_plat_ingredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="De quel ingrédient disposez vous ?"
+        android:inputType="textPersonName"
+        android:textColor="@color/marron"
+        android:textColorHint="@color/gris_clair"
+        app:layout_constraintStart_toStartOf="@+id/rechercher_plat_ingredient_titre"
+        app:layout_constraintTop_toBottomOf="@+id/rechercher_plat_ingredient_titre" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

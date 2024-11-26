@@ -106,14 +106,10 @@
 
         <Button
             android:id="@+id/boutton_filtres"
-            android:layout_width="90dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleX="1.9"
             android:text="Sélectionner"
-            android:textAllCaps="false"
             android:textColor="@color/marron"
-            android:textSize="8sp"
-            android:fontFamily="sans-serif"
             app:layout_constraintEnd_toEndOf="@+id/filtres"
             app:layout_constraintStart_toStartOf="@+id/filtres"
             app:layout_constraintTop_toBottomOf="@+id/filtres" />
@@ -129,23 +125,42 @@
             android:layout_marginTop="40sp"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/resultat_recherche"
-            app:layout_constraintTop_toBottomOf="@+id/compteur" />
+            app:layout_constraintTop_toBottomOf="@+id/appliquer" />
 
         <Button
             android:id="@+id/boutton_detail_recette"
-            android:layout_width="90dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:scaleX="1.9"
-            android:layout_marginTop="30sp"
             android:text="Détails"
-            android:textAllCaps="false"
+            android:layout_marginLeft="20dp"
             android:textColor="@color/marron"
-            android:textSize="8sp"
-            app:layout_constraintStart_toStartOf="@+id/boutton_filtres"
-            app:layout_constraintTop_toBottomOf="@+id/boutton_filtres" />
+            app:layout_constraintBottom_toBottomOf="@+id/boutton_ajouter_favoris"
+            app:layout_constraintStart_toEndOf="@+id/boutton_ajouter_favoris"
+            app:layout_constraintTop_toTopOf="@+id/boutton_ajouter_favoris" />
 
+        <ImageButton
+            android:id="@+id/boutton_ajouter_favoris"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/ic_rechercher_boutton_background"
+            android:src="@drawable/ic_favoris"
 
+            app:layout_constraintBottom_toBottomOf="@+id/nom_recette"
+            app:layout_constraintStart_toEndOf="@+id/nom_recette"
+            app:layout_constraintTop_toTopOf="@+id/nom_recette" />
 
+        <!-- Bouton qui permet d'afficher les resultats de la recherche apres avoir appliquer tous les filtres-->
+        <Button
+            android:id="@+id/appliquer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Appliquer la séléction"
+            android:layout_marginTop="@dimen/marge"
+            android:textColor="@color/marron"
+            app:layout_constraintTop_toBottomOf="@+id/compteur"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
