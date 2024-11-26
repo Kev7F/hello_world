@@ -22,6 +22,7 @@ import android.view.MenuItem;
 
 
 
+
 public class MainActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     public static final String EXTRA_MESSAGE = "com.example.helloworld.MESSAGE";
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
                         // Ouvre l'activité RechercheActivity
-                        startActivity(new Intent(MainActivity.this, IconeRechercheActivity.class));
+                        startActivity(new Intent(MainActivity.this, MainActivity.class));
                         return true;
                     case R.id.nav_search:
                         // Ouvre l'activité PropositionActivity

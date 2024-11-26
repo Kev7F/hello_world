@@ -15,7 +15,7 @@ public class recherche_un_plat_activity extends AppCompatActivity
 {
 
     private TextView affichageCompteur;
-    private int compteur;
+    private int compteur = 2; //recette pour 2 personnes par defaut.
     String[] filtres = {"Végétarien", "Végan", "Halal", "Kasher", "Sans Alcool", "Sans Lactose"};
 
     // tableau de boolean permettant d'identifier le statut de chaque filtre: faux si le filtre n'est pas sélectionner, true si il est sélectionné
@@ -59,6 +59,10 @@ public class recherche_un_plat_activity extends AppCompatActivity
             public void onClick(View v)
             {
                 compteur--;
+                if (compteur<=0)
+                {
+                    compteur = 0 ;
+                }
                 affichageCompteur.setText(String.valueOf(compteur));
             }
         });
@@ -68,13 +72,13 @@ public class recherche_un_plat_activity extends AppCompatActivity
         // boutton pour afficher le menu des filtres, affichage de la boite de dialogue quand on clique sur le bouton
         Button boutonFiltres = findViewById(R.id.boutton_filtres);
         //affichage de la boite de dialogue qui contient le filtres selectionnables quand on clique sur le bouton
-        boutonFiltres.setOnClickListener(v -> showFilterDialog());
+        boutonFiltres.setOnClickListener(v -> afficherFiltreDialog());
 
 
     }
 
     // Méthode qui va permettre d'afficher la boite de dialogue contenant les filtres selectionnables
-    private void showFilterDialog()
+    private void afficherFiltreDialog()
     {
         AlertDialog.Builder fenetre_dialogue = new AlertDialog.Builder(this);
         fenetre_dialogue.setTitle("Sélectionner pour filtrer les résultats : ");

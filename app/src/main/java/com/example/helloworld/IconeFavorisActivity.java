@@ -8,6 +8,6 @@ public class IconeFavorisActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_proposition);
+        setContentView(R.layout.activity_favoris);
     }
 }
