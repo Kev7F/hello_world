@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
                         // Ouvre l'activité RechercheActivity
-                        startActivity(new Intent(MainActivity.this, IconeRechercheActivity.class));
+                        startActivity(new Intent(MainActivity.this, MainActivity.class));
                         return true;
                     case R.id.nav_search:
                         // Ouvre l'activité PropositionActivity
@@ -75,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-
 
 
         // Initialisation de la base de données, le nom de la base de donnée est "my-database"
