@@ -145,7 +145,17 @@
             app:layout_constraintStart_toStartOf="@+id/boutton_filtres"
             app:layout_constraintTop_toBottomOf="@+id/boutton_filtres" />
 
+        <ImageButton
+            android:id="@+id/boutton_ajouter_favoris"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
 
+            android:background="@drawable/ic_rechercher_boutton_background"
+            android:src="@drawable/ic_favoris"
+
+            app:layout_constraintBottom_toBottomOf="@+id/nom_recette"
+            app:layout_constraintStart_toEndOf="@+id/nom_recette"
+            app:layout_constraintTop_toTopOf="@+id/nom_recette" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
