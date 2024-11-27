@@ -18,9 +18,11 @@ public class resultat_recherche_ingredient_activity extends AppCompatActivity
 
     String[] filtres2 = {"Italien", "Arabe", "Turc", "Français", "Japonais", "Méxicain"};
     String[] temps_preparation = {"Entre 1min et 15 min", "Entre 15min et 30 min", "Entre 30 min et 1h",  "Plus d'1h"};
+    String[] filtres3 = {"Végétarien", "Végan", "Halal", "Kasher", "Sans Alcool", "Sans Lactose"};
 
     // tableau de boolean permettant d'identifier le statut de chaque filtre: faux si le filtre n'est pas sélectionner, true si il est sélectionné
     private boolean[] statut_filtre_selectionne2 = new boolean[filtres2.length];
+    private boolean[] statut_filtre_selectionne3 = new boolean[filtres2.length];
 
 
     @Override
@@ -74,9 +76,9 @@ public class resultat_recherche_ingredient_activity extends AppCompatActivity
             }
         });
 
-        // ----------- Gestion de la liste de filtre -----------------
+        // ----------- Gestion de la liste de filtre origines du plat voulu -----------------
 
-        // boutton pour afficher le menu des filtres, affichage de la boite de dialogue quand on clique sur le bouton
+        // boutton pour afficher le menu des origines du plat voulu par l'utilisateur, affichage de la boite de dialogue quand on clique sur le bouton
         Button boutonFiltres = findViewById(R.id.boutton_filtres2);
         //affichage de la boite de dialogue qui contient le filtres selectionnables quand on clique sur le bouton
         boutonFiltres.setOnClickListener(v -> afficherOriginDialog());
@@ -87,6 +89,13 @@ public class resultat_recherche_ingredient_activity extends AppCompatActivity
         Button boutonTemps = findViewById(R.id.bouton_temps_prepa);
         //affichage de la boite de dialogue qui contient le filtres selectionnables quand on clique sur le bouton
         boutonTemps.setOnClickListener(v -> afficherTimeDialog());
+
+        //----------- Gestion de la liste de filtre -----------------
+
+        // boutton pour afficher le menu des filtres, affichage de la boite de dialogue quand on clique sur le bouton
+        Button boutonFiltres3 = findViewById(R.id.boutton_filtres3);
+        //affichage de la boite de dialogue qui contient les filtres selectionnables quand on clique sur le bouton
+        boutonFiltres3.setOnClickListener(v -> afficherFiltre3Dialog());
 
     }
 
@@ -152,6 +161,39 @@ public class resultat_recherche_ingredient_activity extends AppCompatActivity
             {
                 Toast.makeText(this, "Pas de préférence", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        // Annuler pour  fermmer la fenetre sans prendre en compte les filtres sélectionné, on reste dans le même état qu'avant d'ouvrir la fenetre de filtres
+        fenetre_dialogue.setNegativeButton("Annuler", null);
+
+        fenetre_dialogue.create().show();
+    }
+
+    // Méthode qui va permettre d'afficher la boite de dialogue contenant les filtres selectionnables
+    private void afficherFiltre3Dialog()
+    {
+        AlertDialog.Builder fenetre_dialogue = new AlertDialog.Builder(this);
+        fenetre_dialogue.setTitle("Sélectionner pour filtrer les résultats : ");
+
+        // création de la liste des filtres avec setmultichoiceitems, plusieur filtres peuvent être selectionnés en même temps
+        fenetre_dialogue.setMultiChoiceItems(filtres3, statut_filtre_selectionne3, (dialog, which, isChecked) -> {
+            //quand on appuie sur un filtre, son statut change (false si on désélectionne, true si on sélectionne)
+            statut_filtre_selectionne3[which] = isChecked;
+        });
+
+        // enregistrer les filtres sélectionnés
+        fenetre_dialogue.setPositiveButton("OK", (dialog, which) -> {
+            // afficher filtres sélectionnés avec un toast
+            StringBuilder filtres_selectionnes3 = new StringBuilder("Filtres sélectionnés : ");
+            for (int i = 0; i < filtres3.length; i++)
+            {
+                if (statut_filtre_selectionne3[i])
+                {
+                    filtres_selectionnes3.append(filtres3[i]).append(", ");
+                }
+            }
+
+            Toast.makeText(this, filtres_selectionnes3.toString(), Toast.LENGTH_SHORT).show();
         });
 
         // Annuler pour  fermmer la fenetre sans prendre en compte les filtres sélectionné, on reste dans le même état qu'avant d'ouvrir la fenetre de filtres

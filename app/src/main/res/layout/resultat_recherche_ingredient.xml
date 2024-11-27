@@ -145,4 +145,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bouton_temps_prepa" />
 
+    <TextView
+        android:id="@+id/liste_filtres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Filtrer les résultats :"
+        android:textColor="@color/marron"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/filtres2"
+        app:layout_constraintStart_toStartOf="@+id/filtres2"
+        app:layout_constraintTop_toBottomOf="@+id/boutton_filtres2" />
+
+    <Button
+        android:id="@+id/boutton_filtres3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sélectionner"
+        android:textColor="@color/marron"
+        app:layout_constraintEnd_toEndOf="@+id/liste_filtres"
+        app:layout_constraintStart_toStartOf="@+id/liste_filtres"
+        app:layout_constraintTop_toBottomOf="@+id/liste_filtres" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
