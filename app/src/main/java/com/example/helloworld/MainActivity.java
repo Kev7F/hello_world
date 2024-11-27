@@ -17,6 +17,8 @@ import database.TextEntity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import android.view.MenuItem;
+import android.view.Menu;
+
 
 
 
@@ -105,7 +107,29 @@ public class MainActivity extends AppCompatActivity {
         }).start();
 
 
+
+
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_bar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_historique) {
+            // Ouvrir le BottomSheet lorsqu'on clique sur l'historique
+            HistoriqueBottomSheetFragment bottomSheetFragment = new HistoriqueBottomSheetFragment();
+            bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
     /** Called when the user taps the Send button */
     public void sendMessage(View view) {
