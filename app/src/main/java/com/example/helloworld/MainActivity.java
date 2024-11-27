@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             pate_carbo.nom_recette = "Pâte Carbonara";
             db.textDao().insertText(pate_carbo);
 
-
+            //Affichage du nom Lasagnes à partir de la database
             String nomRecette = db.textDao().getNomRecetteById(1);
             System.out.println(nomRecette); //Affichage de Lasagnes dans logcat
         }).start();

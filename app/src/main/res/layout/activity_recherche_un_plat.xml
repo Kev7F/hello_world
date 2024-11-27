@@ -114,6 +114,7 @@
             app:layout_constraintStart_toStartOf="@+id/filtres"
             app:layout_constraintTop_toBottomOf="@+id/filtres" />
 
+<!--
         <TextView
             android:id="@+id/nom_recette"
             style="@style/style_ecriture_sous_titres"
@@ -149,8 +150,9 @@
             app:layout_constraintBottom_toBottomOf="@+id/nom_recette"
             app:layout_constraintStart_toEndOf="@+id/nom_recette"
             app:layout_constraintTop_toTopOf="@+id/nom_recette" />
+-->
 
-        <!-- Bouton qui permet d'afficher les resultats de la recherche apres avoir appliquer tous les filtres-->
+                <!-- Bouton qui permet d'afficher les resultats de la recherche apres avoir appliquer tous les filtres-->
         <Button
             android:id="@+id/appliquer"
             android:layout_width="wrap_content"
@@ -162,5 +164,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             />
+
+        <LinearLayout
+            android:id="@+id/container_recipes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appliquer" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
