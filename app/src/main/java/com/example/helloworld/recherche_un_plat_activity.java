@@ -152,6 +152,17 @@ public class recherche_un_plat_activity extends AppCompatActivity
                             ImageButton addToFavoritesButton = new ImageButton(this);
                             addToFavoritesButton.setImageResource(R.drawable.ic_favoris); // Icône des favoris
                             addToFavoritesButton.setBackgroundResource(R.drawable.ic_rechercher_boutton_background);
+                            //addToFavoritesButton.setBackgroundColor(getResources().getColor(android.R.color.transparent)); // Testez un fond transparent
+
+
+                            // Ajouter un OnClickListener pour détecter le clic sur le bouton
+                            addToFavoritesButton.setOnClickListener(t -> {
+                                // Affichage du toast pour tester si le clic est capté
+                                Toast.makeText(this, "Ajouté aux favoris", Toast.LENGTH_SHORT).show();
+
+                                // Vous pouvez ajouter la logique ici pour réellement ajouter à vos favoris
+                            });
+
 
                             LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(
                                     LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -159,6 +170,7 @@ public class recherche_un_plat_activity extends AppCompatActivity
                             );
                             buttonParams.setMargins(8, 0, 16, 0);
                             addToFavoritesButton.setLayoutParams(buttonParams);
+
 
                             // 3. Créer un bouton "Détails"
                             Button detailsButton = new Button(this);
