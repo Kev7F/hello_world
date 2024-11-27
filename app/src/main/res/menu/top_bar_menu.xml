@@ -4,6 +4,8 @@
     <item
         android:id="@+id/action_historique"
         android:title="Historique"
-        android:icon="@drawable/ic_recherche"
+        android:icon="@drawable/ic_page_favoris"
         app:showAsAction="always"/>
+
+
 </menu>

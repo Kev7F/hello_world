@@ -10,7 +10,7 @@
     <!-- Deuxième catégorie -->
     <item
         android:id="@+id/nav_search"
-        android:icon="@drawable/ic_fermer"
+        android:icon="@drawable/ic_proposition1"
         android:title="Proposition" />
 
     <!-- Troisième catégorie -->
