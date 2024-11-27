@@ -2,8 +2,6 @@ package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
-import java.util.ArrayList;
-import java.util.List;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -28,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     public static final String EXTRA_MESSAGE = "com.example.helloworld.MESSAGE";
     private BottomNavigationView bottomNavigationView; // Variable pour la BottomNavigationView
-
 
 
     @Override
@@ -63,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
                         // Ouvre l'activité RechercheActivity
-                        startActivity(new Intent(MainActivity.this, IconeRechercheActivity.class));
+                        startActivity(new Intent(MainActivity.this, MainActivity.class));
                         return true;
                     case R.id.nav_search:
                         // Ouvre l'activité PropositionActivity
@@ -77,8 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-
 
 
         // Initialisation de la base de données, le nom de la base de donnée est "my-database"
@@ -98,12 +93,12 @@ public class MainActivity extends AppCompatActivity {
             db.textDao().insertText(Lasagnes);
 
             TextEntity pate_carbo = new TextEntity();
-            pate_carbo.nom_recette = "Pâte Carbonara";
+            pate_carbo.nom_recette = "Pate Carbonara";
             db.textDao().insertText(pate_carbo);
 
+            //Affichage du nom Lasagnes à partir de la database
             String nomRecette = db.textDao().getNomRecetteById(1);
             System.out.println(nomRecette); //Affichage de Lasagnes dans logcat
-
         }).start();
 
 

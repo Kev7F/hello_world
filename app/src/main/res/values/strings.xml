@@ -1,10 +1,18 @@
 <resources>
-    <string name="app_name">Cook\'Eat</string>
+    <string name="app_name">CookEasil-e</string>
     <string name="boutton_rechercher">Rechercher</string>
 
     <!-- Page de recherche d'un plat -->
     <string name="rechercher_un_plat">Rechercher un plat</string>
     <string name="resultat_recherche_plat">Voici les resultats pour votre recherche : </string>
+
+    <!-- Page de recherche d'un plat à partir d'ingrédient donné par l'utilisateur-->
+    <string name="rechercher_un_plat_ingredient">Rechercher un plat à partir d\'ingrédients </string>
+    <string name="resultat_recherche_plat_ingredient">Voici les propositions pour votre recherche : </string>
+
+    <!-- Page des recettes favoris enregistrés par l'utilisateur -->
+    <string name="favoris">Favoris </string>
+    <string name="liste_recettes_favoris">Retrouvez toutes vos recettes préférés ici: </string>
 
 
     <!-- Pop up qui s'ouvre quand on clique sur une recette proposée -->

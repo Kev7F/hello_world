@@ -26,11 +26,16 @@ public class TextEntity {
     //filtre_temps = "temps_preparation;temps_cuisson"
     public String filtres_temps;
     public String filtres;
+
+    public String getNomRecette() {
+        return nom_recette;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public String getRecette() {
+        return recette;
+    }
 }
-
-
-//public int id; // Identifiant unique pour chaque ligne
-//public String content;
-//public int nbr_personnes;
-//public String ingredients;
-//public String recette;

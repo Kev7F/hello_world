@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jaune_pale"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/resultat_recherche_ingredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marge"
+        android:text="@string/resultat_recherche_plat_ingredient"
+        android:layout_marginLeft="@dimen/marge"
+        android:layout_marginTop="@dimen/marge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/style_ecriture_sous_titres"/>
+
+    <TextView
+        android:id="@+id/ingredient_recherche_par_utilisateur"
+        style="@style/style_ecriture_sous_titres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/resultat_recherche_ingredient"
+        app:layout_constraintTop_toBottomOf="@+id/resultat_recherche_ingredient" />
+
+    <TextView
+        android:id="@+id/nbr_de_personnes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge"
+        android:text="Nombre de personnes : "
+        android:textColor="@color/marron"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintStart_toStartOf="@+id/ingredient_recherche_par_utilisateur"
+        app:layout_constraintTop_toBottomOf="@+id/ingredient_recherche_par_utilisateur" />
+
+    <TextView
+        android:id="@+id/filtres2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge"
+        android:layout_marginLeft="25dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Origine du plat voulu : "
+        android:textColor="@color/marron"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/nbr_de_personnes"
+        app:layout_constraintTop_toBottomOf="@+id/ingredient_recherche_par_utilisateur" />
+
+    <LinearLayout
+        android:id="@+id/compteur2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintStart_toStartOf="@+id/nbr_de_personnes"
+        app:layout_constraintTop_toBottomOf="@+id/nbr_de_personnes">
+
+        <Button
+            android:id="@+id/boutton_moins2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="-"
+            android:textColor="@color/marron"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            />
+
+        <!-- Texte au milieu -->
+        <TextView
+            android:id="@+id/valeur_du_compteur2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="2"
+            android:textSize="20sp"
+            android:fontFamily="cursive"
+            android:textStyle="bold"/>
+
+        <!-- Bouton + -->
+        <Button
+            android:id="@+id/boutton_plus2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"
+            android:textColor="@color/marron"
+            android:textStyle="bold"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:textSize="19sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/boutton_filtres2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sélectionner"
+        android:textColor="@color/marron"
+        app:layout_constraintEnd_toEndOf="@+id/filtres2"
+        app:layout_constraintStart_toStartOf="@+id/filtres2"
+        app:layout_constraintTop_toBottomOf="@+id/filtres2" />
+
+    <TextView
+        android:id="@+id/temps_prepa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Temps de préparation :"
+        android:textColor="@color/marron"
+        android:textSize="20sp"
+        android:layout_marginTop="@dimen/marge"
+        app:layout_constraintStart_toStartOf="@+id/compteur2"
+        app:layout_constraintTop_toBottomOf="@+id/compteur2" />
+
+    <Button
+        android:id="@+id/bouton_temps_prepa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sélectionner"
+        android:textColor="@color/marron"
+        app:layout_constraintEnd_toEndOf="@+id/temps_prepa"
+        app:layout_constraintStart_toStartOf="@+id/temps_prepa"
+        app:layout_constraintTop_toBottomOf="@+id/temps_prepa" />
+
+    <!-- Bouton qui permet d'afficher les resultats de la recherche apres avoir appliquer tous les filtres-->
+    <Button
+        android:id="@+id/appliquer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appliquer la séléction"
+        android:textColor="@color/marron"
+        android:layout_marginTop="@dimen/marge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bouton_temps_prepa" />
+
+    <TextView
+        android:id="@+id/liste_filtres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marge"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Filtrer les résultats :"
+        android:textColor="@color/marron"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/filtres2"
+        app:layout_constraintStart_toStartOf="@+id/filtres2"
+        app:layout_constraintTop_toBottomOf="@+id/boutton_filtres2" />
+
+    <Button
+        android:id="@+id/boutton_filtres3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sélectionner"
+        android:textColor="@color/marron"
+        app:layout_constraintEnd_toEndOf="@+id/liste_filtres"
+        app:layout_constraintStart_toStartOf="@+id/liste_filtres"
+        app:layout_constraintTop_toBottomOf="@+id/liste_filtres" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,6 +27,8 @@
         <activity android:name=".IconeRechercheActivity" />
         <activity android:name=".IconePropositionActivity" />
         <activity android:name=".IconeFavorisActivity" />
+        <activity android:name=".resultat_recherche_ingredient_activity" />
+        <activity android:name=".recette_activity" />
 
     </application>
 
