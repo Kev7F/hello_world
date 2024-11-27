@@ -23,9 +23,39 @@ public class TextEntity {
     public double qt_champignon;
     public String ingredients;
     public String recette;
+    public int qt_lardons;
+    public int qt_jaune_doeuf;
+    public int qt_oignons;
+    public int qt_creme_fraiche;
+    public int qt_pates;
+    public int qt_huile;
+    public int qt_cacao;
+    public int qt_biscuit_cuillere;
+    public int qt_sucre;
+    public int qt_oeuf;
+    public int qt_sucre_vanille;
+    public int qt_mascarpone;
+    public int qt_cafe_noir;
+
+
+
+
+
+
+
+
+
+
+
+
+    //Ingrédients pour pate carbo
+
     //filtre_temps = "temps_preparation;temps_cuisson"
     public String filtres_temps;
     public String filtres;
+
+    //filtre_origine : selectionner l'origine du plat voulu".
+    public String filtre_origine;
 
     public String getNomRecette() {
         return nom_recette;
