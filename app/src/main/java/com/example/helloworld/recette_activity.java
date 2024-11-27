@@ -41,8 +41,8 @@ public class recette_activity extends AppCompatActivity {
 
                     // Remplir les TextView avec les données
                     titreView.setText("Recette : " + titre);
-                    ingredientsView.setText("Ingrédients : \n" + ingredients);
-                    etapesView.setText("Étapes : \n" + etapes);
+                    ingredientsView.setText(ingredients);
+                    etapesView.setText(etapes);
                 });
             } else {
                 // Gérer le cas où aucune recette n'est trouvée (si besoin)
