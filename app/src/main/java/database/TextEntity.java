@@ -26,4 +26,16 @@ public class TextEntity {
     //filtre_temps = "temps_preparation;temps_cuisson"
     public String filtres_temps;
     public String filtres;
+
+    public String getNomRecette() {
+        return nom_recette;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public String getRecette() {
+        return recette;
+    }
 }

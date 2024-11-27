@@ -44,4 +44,8 @@ public interface TextDao {
 
     @Query("SELECT * FROM TextEntity WHERE id = :id")
     TextEntity getEntityById(int id);
+
+    @Query("SELECT * FROM TextEntity WHERE nom_recette = :nomRecette LIMIT 1")
+    TextEntity getEntityByName(String nomRecette);
+
 }

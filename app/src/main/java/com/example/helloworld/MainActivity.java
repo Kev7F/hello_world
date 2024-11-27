@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             db.textDao().insertText(Lasagnes);
 
             TextEntity pate_carbo = new TextEntity();
-            pate_carbo.nom_recette = "Pâte Carbonara";
+            pate_carbo.nom_recette = "Pate Carbonara";
             db.textDao().insertText(pate_carbo);
 
             //Affichage du nom Lasagnes à partir de la database

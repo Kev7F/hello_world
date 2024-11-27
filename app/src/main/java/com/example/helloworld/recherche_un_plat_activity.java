@@ -102,6 +102,7 @@ public class recherche_un_plat_activity extends AppCompatActivity
         //affichage de la boite de dialogue qui contient le filtres selectionnables quand on clique sur le bouton
         boutonFiltres.setOnClickListener(v -> afficherFiltreDialog());
 
+        //Définition de l'action du bouton appliquer
         Button btnApply = findViewById(R.id.appliquer);
         btnApply.setOnClickListener(v -> {
 
@@ -160,9 +161,9 @@ public class recherche_un_plat_activity extends AppCompatActivity
                                 // Affichage du toast pour tester si le clic est capté
                                 Toast.makeText(this, "Ajouté aux favoris", Toast.LENGTH_SHORT).show();
 
+                                //String "recette1;recette2"
                                 // Vous pouvez ajouter la logique ici pour réellement ajouter à vos favoris
                             });
-
 
                             LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(
                                     LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -185,6 +186,9 @@ public class recherche_un_plat_activity extends AppCompatActivity
                             // Ajouter un écouteur de clic pour le bouton "Détails"
                             detailsButton.setOnClickListener(btn -> {
                                 Toast.makeText(this, "Détails pour " + name, Toast.LENGTH_SHORT).show();
+                                Intent intent_details = new Intent(this, recette_activity.class); // Remplacez par le nom réel de votre classe
+                                intent_details.putExtra("recipeName", name); // Passer le nom de la recette si nécessaire
+                                startActivity(intent_details);
                             });
 
                             // Ajouter les vues au LinearLayout
