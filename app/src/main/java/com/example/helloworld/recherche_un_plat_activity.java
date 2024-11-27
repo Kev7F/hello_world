@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -29,7 +30,7 @@ public class recherche_un_plat_activity extends AppCompatActivity
 
     // tableau de boolean permettant d'identifier le statut de chaque filtre: faux si le filtre n'est pas sélectionner, true si il est sélectionné
     private boolean[] statut_filtre_selectionne = new boolean[filtres.length];
-    
+
 
     @Override
     //La fonction OnCreate est la fonction qui est directement lancé après l'avoir créer
@@ -37,6 +38,12 @@ public class recherche_un_plat_activity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recherche_un_plat);
+
+        //Afficher la flèche de retour en haut à gauche pour revenir a l'activité précédente
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         //Récupération de la base de données
         AppDatabase db = AppDatabase.getInstance(this);
@@ -102,6 +109,7 @@ public class recherche_un_plat_activity extends AppCompatActivity
         //affichage de la boite de dialogue qui contient le filtres selectionnables quand on clique sur le bouton
         boutonFiltres.setOnClickListener(v -> afficherFiltreDialog());
 
+        //Définition de l'action du bouton appliquer
         Button btnApply = findViewById(R.id.appliquer);
         btnApply.setOnClickListener(v -> {
 
@@ -160,7 +168,13 @@ public class recherche_un_plat_activity extends AppCompatActivity
                                 // Affichage du toast pour tester si le clic est capté
                                 Toast.makeText(this, "Ajouté aux favoris", Toast.LENGTH_SHORT).show();
 
+                                // liste/ tableau avec l'id de la recette
+
+
                                 // Vous pouvez ajouter la logique ici pour réellement ajouter à vos favoris
+
+
+
                             });
 
 
@@ -235,4 +249,17 @@ public class recherche_un_plat_activity extends AppCompatActivity
         fenetre_dialogue.create().show();
     }
 
+
+    //Méthode pour gérer la flèche de retour à l'activité précédente.
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Si l'utilisateur clique sur la flèche de retour, retour à l'activité précédente
+        if (item.getItemId() == android.R.id.home)
+        {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,6 +28,12 @@ public class resultat_recherche_ingredient_activity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resultat_recherche_ingredient);
+
+        //Afficher la flèche de retour en haut à gauche pour revenir a l'activité précédente
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         // ----------- Gestion de l'affichage de la recherche de l'utilisateur -----------------
         // Get the Intent that started this activity and extract the string
@@ -151,6 +158,19 @@ public class resultat_recherche_ingredient_activity extends AppCompatActivity
         fenetre_dialogue.setNegativeButton("Annuler", null);
 
         fenetre_dialogue.create().show();
+    }
+
+    //Méthode pour gérer la flèche de retour à l'activité précédente.
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Si l'utilisateur clique sur la flèche de retour, retour à l'activité précédente
+        if (item.getItemId() == android.R.id.home)
+        {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
