@@ -38,24 +38,19 @@ public class TextEntity {
     public int qt_cafe_noir;
 
 
-
-
-
-
-
-
-
-
-
-
-    //Ingrédients pour pate carbo
-
     //filtre_temps = "temps_preparation;temps_cuisson"
     public String filtres_temps;
     public String filtres;
 
+    public Boolean favoris = false;
+
     //filtre_origine : selectionner l'origine du plat voulu".
     public String filtre_origine;
+
+    public void add_rem_favoris() {
+        if (favoris == false) favoris = true;
+        else favoris = false;
+    }
 
     public String getNomRecette() {
         return nom_recette;
@@ -68,4 +63,5 @@ public class TextEntity {
     public String getRecette() {
         return recette;
     }
+
 }

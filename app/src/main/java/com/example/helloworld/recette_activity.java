@@ -19,6 +19,7 @@ public class recette_activity extends AppCompatActivity {
 
         // Récupérer le nom de la recette transmis via l'intention
         String recipeName = getIntent().getStringExtra("recipeName");
+        String compteur_value = getIntent().getStringExtra("compteur_value");
 
         // Initialiser la base de données
         AppDatabase db = AppDatabase.getInstance(this);
@@ -37,11 +38,13 @@ public class recette_activity extends AppCompatActivity {
                 runOnUiThread(() -> {
                     TextView titreView = findViewById(R.id.titre_recette_activity);
                     TextView ingredientsView = findViewById(R.id.ingredients);
+                    TextView nbr_personne = findViewById(R.id.nbr_personnes);
                     TextView etapesView = findViewById(R.id.etapes_recette);
 
                     // Remplir les TextView avec les données
                     titreView.setText("Recette : " + titre);
                     ingredientsView.setText(ingredients);
+                    nbr_personne.setText("Nombre de personnes : " + compteur_value);
                     etapesView.setText(etapes);
                 });
             } else {

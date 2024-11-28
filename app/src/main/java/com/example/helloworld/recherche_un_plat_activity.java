@@ -200,7 +200,8 @@ public class recherche_un_plat_activity extends AppCompatActivity
                             detailsButton.setOnClickListener(btn -> {
                                 Toast.makeText(this, "Détails pour " + name, Toast.LENGTH_SHORT).show();
                                 Intent intent_details = new Intent(this, recette_activity.class); // Remplacez par le nom réel de votre classe
-                                intent_details.putExtra("recipeName", name); // Passer le nom de la recette si nécessaire
+                                intent_details.putExtra("recipeName", name);
+                                intent_details.putExtra("compteur_value", String.valueOf(compteur));
                                 startActivity(intent_details);
                             });
 

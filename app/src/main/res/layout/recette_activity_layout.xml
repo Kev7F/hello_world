@@ -37,6 +37,7 @@
                 style="@style/style_ecriture_contenu_recette"
                 android:textStyle="italic" />
 
+
             <!-- Section des ingrédients -->
             <TextView
                 android:id="@+id/ingredients_label"

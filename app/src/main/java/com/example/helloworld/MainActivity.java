@@ -17,9 +17,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import android.view.MenuItem;
 
 
-
-
-
 public class MainActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     public static final String EXTRA_MESSAGE = "com.example.helloworld.MESSAGE";
@@ -88,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
             Lasagnes.qt_huile = 12*Lasagnes.nbr_personnes;
             Lasagnes.ingredients = "• Sel\n• Poivre\n• Origan\n• Fromage râpé\n• Huile : "+Lasagnes.qt_huile+"cl\n• Cube de bouillon (quantité : 1)\n• Oignon : "+Lasagnes.qt_oignons+"\n• Boite de lasagnes (quantité : 1)\n• Viande hâchée : "+ Lasagnes.qt_boeuf +"g \n• Tomates pelées : "+ Lasagnes.qt_tomate +"g \n• Champignon : " + Lasagnes.qt_champignon + "G\n• Gousse d'ail (quantité : 1)\n• Béchamel liquide";
             Lasagnes.recette = "ÉTAPE 1\nHacher l'oignon et l'ail.\n\nÉTAPE 2\nFaire chauffer un peu d'huile, y faire rissoler l'ail et l'oignon, puis ajouter la viande hachée et les champignons émincés.\n\nÉTAPE 3\nLaisser revenir, puis ajouter les tomates pelées et le cube de bouillon émietté.\n\nÉTAPE 4\nSaler, poivrer et saupoudre d'origan.\n\nÉTAPE 5\nLaisser cuire 30 min à feu doux.\n\nÉTAPE 6\nBeurrer un plat rectangulaire, recouvrir le fond de béchamel.\n\nÉTAPE 7\nDisposer des plaques de lasagnes, couvrir de béchamel puis de sauce à la viande.\n\nÉTAPE 8\nSaupoudrer de fromage râpé.\n\nÉTAPE 9\nRépéter cette opération 4 fois.\n\nÉTAPE 10\nNapper de béchamel, recouvrir de fromage râpé et faire cuire 30 min au four à 180°C (thermostat 6).\n\n";
+            Lasagnes.ingredients = "•sel\n•poivre\n•origan\n•fromage\n•râpé\n•huile\n•cube de bouillon (quantité : 1)\n•Oignon\n•Boite de lasagnes (quantité : 1)\n•Viande hâchée (quantité : " + Lasagnes.qt_boeuf + ")\n•Tomates pelées (quantité : " + Lasagnes.qt_tomate + ")\n•Champignon (quantité : " + Lasagnes.qt_champignon + ")\n•Gousse d'ail (quantité : 1)\n•Béchamel liquide";
+            Lasagnes.recette = "ÉTAPE 1\nHacher l'oignon et l'ail.\n\nÉTAPE 2\nFaire chauffer un peu d'huile, y faire rissoler l'ail et l'oignon, puis ajouter la viande hachée et les champignons émincés.\n\nÉTAPE 3\nLaisser revenir, puis ajouter les tomates pelées et le cube de bouillon émietté.\n\nÉTAPE 4\nSaler, poivrer et saupoudre d'origan.\n\nÉTAPE 5\nLaisser cuire 30 min à feu doux.\n\nÉTAPE 6\nBeurrer un plat rectangulaire, recouvrir le fond de béchamel.\n\nÉTAPE 7\nDisposer des plaques de lasagnes, couvrir de béchamel puis de sauce à la viande.\n\nÉTAPE 8\nSaupoudrer de fromage râpé.\n\nÉTAPE 9\nRépéter cette opération 4 fois.\n\nÉTAPE 10\nNapper de béchamel, recouvrir de fromage râpé et faire cuire 30 min au four à 180°C (thermostat 6).\n\n";
             Lasagnes.filtres_temps= "45;30";
             Lasagnes.filtre_origine = "Italien";
             db.textDao().insertText(Lasagnes);
@@ -124,9 +123,6 @@ public class MainActivity extends AppCompatActivity {
             tiramisu.filtre_origine = "Italien";
             db.textDao().insertText(tiramisu);
 
-            //Affichage du nom Lasagnes à partir de la database
-            String nomRecette = db.textDao().getNomRecetteById(1);
-            System.out.println(Lasagnes); //Affichage de Lasagnes dans logcat
 
         }).start();
 
