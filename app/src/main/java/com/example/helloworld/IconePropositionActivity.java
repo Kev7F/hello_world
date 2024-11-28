@@ -69,9 +69,9 @@ public class IconePropositionActivity extends AppCompatActivity {
 
 
     /** Called when the user taps the Send button */
-    public void sendMessage(View view) {
+    public void sendMessage2(View view) {
         // Récupérer la recherche depuis la barre de recherche
-        EditText editText = findViewById(R.id.barre_recherche_plat);
+        EditText editText = findViewById(R.id.barre_recherche_plat_ingredient);
         String message = editText.getText().toString();
 
         // Sauvegarder cette recherche dans SharedPreferences (pour garder l'historique)
@@ -84,9 +84,18 @@ public class IconePropositionActivity extends AppCompatActivity {
         editor.apply();  // Appliquer les modifications
 
         // Passer à l'activité suivante (par exemple recherche d'un plat)
-        Intent intent = new Intent(this, recherche_un_plat_activity.class);
+        Intent intent = new Intent(this, resultat_recherche_ingredient_activity.class);
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
-
+//    /** Called when the user taps the Send button */
+//    public void sendMessage2(View view)
+//    {
+//        // Do something in response to button
+//        Intent intent = new Intent(this, resultat_recherche_ingredient_activity.class);
+//        EditText editText = (EditText) findViewById(R.id.barre_recherche_plat_ingredient);
+//        String message = editText.getText().toString();
+//        intent.putExtra(EXTRA_MESSAGE, message);
+//        startActivity(intent);
+//    }
 }
