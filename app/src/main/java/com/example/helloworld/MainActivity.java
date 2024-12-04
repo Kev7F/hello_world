@@ -131,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
             tiramisu.favoris = false;
             db.textDao().insertText(tiramisu);
 
-
         }).start();
 
 

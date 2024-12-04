@@ -108,7 +108,6 @@ public class IconeFavorisActivity extends AppCompatActivity {
                         ImageButton addToFavoritesButton = new ImageButton(this);
                         addToFavoritesButton.setImageResource(R.drawable.ic_favoris); // Icône des favoris
                         addToFavoritesButton.setBackgroundResource(R.drawable.ic_rechercher_boutton_background);
-                        //addToFavoritesButton.setBackgroundColor(getResources().getColor(android.R.color.transparent)); // Testez un fond transparent
 
 
                     // Ajouter un OnClickListener pour détecter le clic sur le bouton

@@ -64,11 +64,9 @@ public class recherche_un_plat_activity extends AppCompatActivity
 
 
         // ----------- Gestion de l'affichage de la recherche de l'utilisateur -----------------
-        // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
         String recette_recherchee = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
-        // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.plat_recherche_par_utilisateur);
         textView.setText(recette_recherchee);
 
@@ -160,7 +158,6 @@ public class recherche_un_plat_activity extends AppCompatActivity
                             ImageButton addToFavoritesButton = new ImageButton(this);
                             addToFavoritesButton.setImageResource(R.drawable.ic_favoris); // Icône des favoris
                             addToFavoritesButton.setBackgroundResource(R.drawable.ic_rechercher_boutton_background);
-                            //addToFavoritesButton.setBackgroundColor(getResources().getColor(android.R.color.transparent)); // Testez un fond transparent
 
 
                             // Ajouter un OnClickListener pour détecter le clic sur le bouton

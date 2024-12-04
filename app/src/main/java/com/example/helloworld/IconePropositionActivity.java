@@ -88,14 +88,5 @@ public class IconePropositionActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
-//    /** Called when the user taps the Send button */
-//    public void sendMessage2(View view)
-//    {
-//        // Do something in response to button
-//        Intent intent = new Intent(this, resultat_recherche_ingredient_activity.class);
-//        EditText editText = (EditText) findViewById(R.id.barre_recherche_plat_ingredient);
-//        String message = editText.getText().toString();
-//        intent.putExtra(EXTRA_MESSAGE, message);
-//        startActivity(intent);
-//    }
+
 }

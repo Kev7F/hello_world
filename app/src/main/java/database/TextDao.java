@@ -16,7 +16,6 @@ public interface TextDao {
     @Insert
     void insertText(TextEntity textEntity);
 
-
     @Query("SELECT ingredients FROM TextEntity WHERE nom_recette = :recipeName LIMIT 1")
     String getIngredientsByRecipeName(String recipeName);
 
@@ -30,37 +29,10 @@ public interface TextDao {
     boolean getFavoris(String nomRecette);
 
     @Update
-    void updateTextEntity(TextEntity entity);
-
-    @Update
     void updateRecipe(TextEntity textEntity);
 
     @Query("SELECT * FROM TextEntity WHERE nom_recette = :nomRecette LIMIT 1")
     TextEntity getRecipeByName(String nomRecette);
-
-
-
-    @Query("UPDATE TextEntity " +
-            "SET nbr_personnes = :nbrPersonnes, " +
-            "    qt_boeuf = qt_boeuf * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_tomate = qt_tomate * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_champignon = qt_champignon * :nbrPersonnes * 1.0 / nbr_personnes, " +
-            "    qt_lardons = qt_lardons * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_jaune_doeuf = qt_jaune_doeuf * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_oignons = qt_oignons * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_creme_fraiche = qt_creme_fraiche * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_pates = qt_pates * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_huile = qt_huile * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_cacao = qt_cacao * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_biscuit_cuillere = qt_biscuit_cuillere * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_sucre = qt_sucre * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_oeuf = qt_oeuf * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_sucre_vanille = qt_sucre_vanille * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_mascarpone = qt_mascarpone * 1.0 * :nbrPersonnes / nbr_personnes, " +
-            "    qt_cafe_noir = qt_cafe_noir * 1.0 * :nbrPersonnes / nbr_personnes " +
-            "WHERE nom_recette = :nomRecette")
-    void updateNbrPersonnesByName(String nomRecette, int nbrPersonnes);
-
 
     @Query("SELECT * FROM TextEntity WHERE nom_recette = :nomRecette LIMIT 1")
     TextEntity getEntityByName(String nomRecette);
