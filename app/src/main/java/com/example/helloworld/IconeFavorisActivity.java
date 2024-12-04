@@ -18,6 +18,7 @@ import java.util.HashSet;
 import java.util.List;
 
 import database.AppDatabase;
+import database.TextEntity;
 
 public class IconeFavorisActivity extends AppCompatActivity {
 
@@ -61,6 +62,13 @@ public class IconeFavorisActivity extends AppCompatActivity {
             List<String> uniqueRecipeNames = new ArrayList<>(new HashSet<>(recipeNames));
             LinearLayout containerRecipes = findViewById(R.id.container_fav);
 
+            List<TextEntity> fav_recette = db.textDao().getFavoriteRecipes();
+            List<String> fav_recette_strings = new ArrayList<>();
+            for (TextEntity recipe : fav_recette) {
+                fav_recette_strings.add(recipe.getNomRecette());
+            }
+
+
             // Ajout de TextViews dynamiques dans le conteneur
             runOnUiThread(() -> {
                 //container_fav.removeAllViews();
@@ -69,7 +77,7 @@ public class IconeFavorisActivity extends AppCompatActivity {
                 // Vider le conteneur avant d'ajouter de nouveaux éléments
 
                 // Filtrer et afficher uniquement la recette correspondant à la recherche
-                for (String name : uniqueRecipeNames) {
+                for (String name : fav_recette_strings) {
                     // Si le nom de la recette correspond au texte recherché
                         // Créer un LinearLayout horizontal pour chaque recette
                         LinearLayout recipeLayout = new LinearLayout(this);
@@ -103,19 +111,24 @@ public class IconeFavorisActivity extends AppCompatActivity {
                         //addToFavoritesButton.setBackgroundColor(getResources().getColor(android.R.color.transparent)); // Testez un fond transparent
 
 
-                        // Ajouter un OnClickListener pour détecter le clic sur le bouton
-                        addToFavoritesButton.setOnClickListener(t -> {
-                            // Affichage du toast pour tester si le clic est capté
-                            Toast.makeText(this, "Ajouté aux favoris", Toast.LENGTH_SHORT).show();
+                    // Ajouter un OnClickListener pour détecter le clic sur le bouton
+                    addToFavoritesButton.setOnClickListener(t -> {
+                        // Affichage du toast pour tester si le clic est capté
+                        Toast.makeText(this, "Ajouté aux favoris", Toast.LENGTH_SHORT).show();
 
-                            // liste/ tableau avec l'id de la recette
+                        // Liste/ tableau avec l'id de la recette
+                        new Thread(() -> {
+                            TextEntity recipe = db.textDao().getRecipeByName(name);
 
+                            if (recipe != null) {
+                                // Inverser la valeur de favoris
+                                recipe.favoris = !recipe.favoris;
 
-                            // Vous pouvez ajouter la logique ici pour réellement ajouter à vos favoris
-
-
-
-                        });
+                                // Mettre à jour la base de données
+                                db.textDao().updateRecipe(recipe);
+                            }
+                        }).start();
+                    });
 
 
                         LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(

@@ -168,14 +168,20 @@ public class recherche_un_plat_activity extends AppCompatActivity
                                 // Affichage du toast pour tester si le clic est capté
                                 Toast.makeText(this, "Ajouté aux favoris", Toast.LENGTH_SHORT).show();
 
-                                // liste/ tableau avec l'id de la recette
+                                // Liste/ tableau avec l'id de la recette
+                                new Thread(() -> {
+                                    TextEntity recipe = db.textDao().getRecipeByName(name);
 
+                                    if (recipe != null) {
+                                        // Inverser la valeur de favoris
+                                        recipe.favoris = !recipe.favoris;
 
-                                // Vous pouvez ajouter la logique ici pour réellement ajouter à vos favoris
-
-
-
+                                        // Mettre à jour la base de données
+                                        db.textDao().updateRecipe(recipe);
+                                    }
+                                }).start();
                             });
+
 
 
                             LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(

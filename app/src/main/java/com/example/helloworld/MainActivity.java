@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
             Lasagnes.recette = "ÉTAPE 1\nHacher l'oignon et l'ail.\n\nÉTAPE 2\nFaire chauffer un peu d'huile, y faire rissoler l'ail et l'oignon, puis ajouter la viande hachée et les champignons émincés.\n\nÉTAPE 3\nLaisser revenir, puis ajouter les tomates pelées et le cube de bouillon émietté.\n\nÉTAPE 4\nSaler, poivrer et saupoudre d'origan.\n\nÉTAPE 5\nLaisser cuire 30 min à feu doux.\n\nÉTAPE 6\nBeurrer un plat rectangulaire, recouvrir le fond de béchamel.\n\nÉTAPE 7\nDisposer des plaques de lasagnes, couvrir de béchamel puis de sauce à la viande.\n\nÉTAPE 8\nSaupoudrer de fromage râpé.\n\nÉTAPE 9\nRépéter cette opération 4 fois.\n\nÉTAPE 10\nNapper de béchamel, recouvrir de fromage râpé et faire cuire 30 min au four à 180°C (thermostat 6).\n\n";
             Lasagnes.filtres_temps= "45;30";
             Lasagnes.filtre_origine = "Italien";
+            Lasagnes.favoris = false;
             db.textDao().insertText(Lasagnes);
 
             TextEntity pate_carbo = new TextEntity();
@@ -109,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
             pate_carbo.filtres_temps= "20;30";
             pate_carbo.filtres = "Sans Alcool";
             pate_carbo.filtre_origine="Italien";
+            pate_carbo.favoris = false;
             db.textDao().insertText(pate_carbo);
 
             TextEntity tiramisu = new TextEntity();
@@ -126,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
             tiramisu.filtres_temps= "15";
             tiramisu.filtres = "Sans Alcool ; Halal";
             tiramisu.filtre_origine = "Italien";
+            tiramisu.favoris = false;
             db.textDao().insertText(tiramisu);
 
 

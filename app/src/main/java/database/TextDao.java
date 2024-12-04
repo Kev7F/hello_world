@@ -48,7 +48,7 @@ public interface TextDao {
     @Query("SELECT * FROM TextEntity WHERE id = :id")
     TextEntity getEntityById(int id);
 
-    @Query("SELECT * FROM TextEntity WHERE favoris = 1")
+    @Query("SELECT * FROM TextEntity WHERE favoris = true")
     List<TextEntity> getFavoriteRecipes();
 
     @Query("SELECT favoris FROM TextEntity WHERE nom_recette = :nomRecette LIMIT 1")
@@ -56,6 +56,12 @@ public interface TextDao {
 
     @Update
     void updateTextEntity(TextEntity entity);
+
+    @Update
+    void updateRecipe(TextEntity textEntity);
+
+    @Query("SELECT * FROM TextEntity WHERE nom_recette = :nomRecette LIMIT 1")
+    TextEntity getRecipeByName(String nomRecette);
 
 
 
