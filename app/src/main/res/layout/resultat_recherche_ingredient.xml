@@ -168,4 +168,14 @@
         app:layout_constraintStart_toStartOf="@+id/liste_filtres"
         app:layout_constraintTop_toBottomOf="@+id/liste_filtres" />
 
+    <LinearLayout
+        android:id="@+id/container_recipes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appliquer2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
